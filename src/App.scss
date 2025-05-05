@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  background-image: url("./assets/image/Afiche De Harry Potter.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #888;
+  min-height: 100vh;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Oscurece el fondo */
+  z-index: -1; /* Detrás de todo el contenido */
+}
+
+.logo {
+  width: 450px !important;
+  height: auto !important;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+.title {
+  font-family: 'Crimson Text', serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+
+}
+.btn-search {
+  background-color: #E7C87B;
+  color: #060606;
+  box-shadow: 0 4px 12px rgba(27, 74, 169, 0.5);
+  font-size: 18.005px;
+  padding-left: 1.528em;
+  padding-right: 1.528em;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 2.778em;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-left: 10%;
+}
+
+
+.btn-search:hover {
+  background-color: #ffffff;
+  border: 1px solid #1ba94c;
+  color: #463406;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  color: #060606;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+.App img{
+  border-radius: 10px;
+
+}
+.App p{
+  color: #060606;
+}
+
+nav{
+  display: flex;
+  justify-content: center; /* Centra los elementos en el eje horizontal */
+  align-items: center; /* Opcional: Centra verticalmente */
+  gap: 10px;
+
+}
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  list-style: none;
+}
+
+.character-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px); /* desenfoque */
+  -webkit-backdrop-filter: blur(8px); /* soporte en Safari */
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  /*width: 220px; medida */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+.image-container {
+  // position: absolute;
+  // top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; // Centra la imagen
+  align-items: center;
+  padding: 20px;
+  
+  
+}
+
+
+.image-container img {
+  
+  width: 300px; // Ajusta el tamaño
+  height: auto; // Mantiene la proporción
+  // border-radius: 10px; // Bordes redondeados
+   // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Efecto de sombra
+  //transition: transform 0.3s ease-in-out;
+  margin-bottom: 5%;
+}
+
+.image-container img:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+ //transform: scale(1.1); // Agranda la imagen al pasar el mouse
+}
+.image-container img:not(.logo) {
+  width: 600px;
+  
+
+}
+.image-varita {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-varita img{
+  width: 200px !important;
+  height: auto !important;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+.image-varita img:hover{
+  
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 80%;
+    padding: 1em;
+  }
+
+  .App {
+    padding: 10px;
+  }
+
+  .character-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .character-card {
+    width: 90%;
+  }
+
+  .btn-search {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    font-size: 16px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .image-container img,
+  .image-container img:not(.logo) {
+    width: 90% !important;
+    margin: 0 auto 20px auto;
+  }
+
+  .image-varita img {
+    width: 150px !important;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  .read-the-docs {
+    font-size: 14px;
+  }
+}
